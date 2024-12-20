@@ -1,0 +1,16 @@
+<Schema name="&#25968;&#25454;&#38598;&#24066;_&#27748;&#33251;&#20493;&#20581;">
+  <Cube name="&#25968;&#25454;&#38598;&#24066;_&#20336;&#24742;&#30005;&#21830;" caption="&#25968;&#25454;&#38598;&#24066;_&#20336;&#24742;&#30005;&#21830;" visible="true" cache="true" enabled="true">
+    <Table name="dmby_eas_saleissuebill">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="sale_org_code" highCardinality="false" name="New Dimension 0">
+      <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true" primaryKey="company_id">
+        <Table name="dw.pub_dim_company">
+        </Table>
+        <Level name="New Level 0" visible="true" column="company_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="company_name">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="New Measure 0" column="amout" aggregator="sum" caption="sum amount" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
