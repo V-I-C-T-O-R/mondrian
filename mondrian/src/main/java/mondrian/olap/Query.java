@@ -385,29 +385,31 @@ public class Query extends QueryPart {
       this.axisCalcs = new Calc[this.axes.length];
 
       for(int i = 0; i < this.axes.length; ++i) {
-        Exp prevSet = this.axes[i].getSet();
-        if (this.axes[i].isNonEmpty()) {
-          ArrayList<Exp> memberExps = new ArrayList();
-          Iterator var22 = this.measuresMembers.iterator();
+//        Exp prevSet = this.axes[i].getSet();
+//        if (this.axes[i].isNonEmpty()) {
+//          ArrayList<Exp> memberExps = new ArrayList();
+//          Iterator var22 = this.measuresMembers.iterator();
+//
+//          while(var22.hasNext()) {
+//            Member member = (Member)var22.next();
+//            memberExps.add(new MemberExpr(member));
+//          }
+//
+//          Exp[] nonEmptyArgs;
+//          if (memberExps.size() > 0) {
+//            Exp set2Exp = new UnresolvedFunCall("{}", Syntax.Braces, (Exp[])memberExps.toArray(new Exp[memberExps.size()]));
+//            nonEmptyArgs = new Exp[]{prevSet, set2Exp};
+//          } else {
+//            nonEmptyArgs = new Exp[]{prevSet};
+//          }
+//
+//          this.axes[i].setSet((new UnresolvedFunCall("NonEmpty", Syntax.Function, nonEmptyArgs)).accept(compiler.getValidator()));
+//        }
+//
+//        this.axisCalcs[i] = this.axes[i].compile(compiler, this.resultStyle);
+//        this.axes[i].setSet(prevSet);
 
-          while(var22.hasNext()) {
-            Member member = (Member)var22.next();
-            memberExps.add(new MemberExpr(member));
-          }
-
-          Exp[] nonEmptyArgs;
-          if (memberExps.size() > 0) {
-            Exp set2Exp = new UnresolvedFunCall("{}", Syntax.Braces, (Exp[])memberExps.toArray(new Exp[memberExps.size()]));
-            nonEmptyArgs = new Exp[]{prevSet, set2Exp};
-          } else {
-            nonEmptyArgs = new Exp[]{prevSet};
-          }
-
-          this.axes[i].setSet((new UnresolvedFunCall("NonEmpty", Syntax.Function, nonEmptyArgs)).accept(compiler.getValidator()));
-        }
-
-        this.axisCalcs[i] = this.axes[i].compile(compiler, this.resultStyle);
-        this.axes[i].setSet(prevSet);
+        this.axisCalcs[i] = this.axes[i].compile(compiler, this.resultStyle );
       }
     }
 
