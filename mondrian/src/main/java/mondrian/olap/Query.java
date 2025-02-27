@@ -408,7 +408,7 @@ public class Query extends QueryPart {
 //
 //        this.axisCalcs[i] = this.axes[i].compile(compiler, this.resultStyle);
 //        this.axes[i].setSet(prevSet);
-
+        // 修改为同官方9.3.0.0版本逻辑一致
         this.axisCalcs[i] = this.axes[i].compile(compiler, this.resultStyle );
       }
     }
